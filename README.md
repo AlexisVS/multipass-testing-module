@@ -62,6 +62,33 @@ echo $variable->echoPhrase('Hello, VendorName!');
 composer test
 ```
 
+## Migrations
+
+The migration system is really simple, you have two choices for the naming convention:
+
+1.  ``2022_10_12_000000_create_users_table.php`` : directly add timestamp and the rest of the file : _create_XXX_table
+2.  ``create_users_table.php``                   : At the migration process the app will add automatically a timsestamp.
+                                                   If you don't have any relationship in your migration this case is better.
+
+
+## Seeders
+
+For seeding you application with the module, 
+your file name need to follow a naming convention:
+
+``TableName_v0_0_0_Seeder.php``
+
+TableName : pascal case
+_         : separator
+v0_0_0    : v + version of the seeder : It"s usefull because maybe you have model relationShip and 
+            you need to seed data before an another seeder. This versionning system allow you to do that.
+_         : separator
+_Seeder   : end of seeder file
+
+Like this you seeder is correct and you can choose the order of our seeder by table.
+Maybe if the need arises, I will add ``ModuleName _ TableName _ v0_0_0 _ Seeder``
+
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
