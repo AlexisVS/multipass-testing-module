@@ -138,7 +138,7 @@ function replaceForWindows(): array
 
 function replaceForAllOtherOSes(): array
 {
-    return explode(PHP_EOL, run('grep -E -r -l -i ":author|:vendor|:package|VendorName|skeleton|migration_table_name|vendor_name|vendor_slug|author@domain.com" --exclude-dir=vendor ./* ./.github/* | grep -v '.basename(__FILE__)));
+    return explode(PHP_EOL, run('grep -E -r -l -i ":author|:vendor|:package|VendorName|skeleton|migration_table_name|vendor_name|vendor_slug|:package_description|:vendor_slug|:package_slug|:author_name|author@domain.com" --exclude-dir=vendor ./* ./.github/* | grep -v '.basename(__FILE__)));
 }
 
 $gitName = run('git config user.name');
