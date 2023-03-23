@@ -1,23 +1,23 @@
 {
     "name": "alexisvs/multipass-testing-module",
-    "version": "0.0.1",
-    "description": "This is the module for all testing purpose",
+    "description": "This is my package for testing in one place all of multipass module features",
+    "version": "1.0.1",
     "keywords": [
-        "alexisvs",
+        "AlexisVS",
         "laravel",
-        "multipass-testing-module"
+        "testing"
     ],
-    "homepage": "https://github.com/alexisvs/multipass-testing-module",
+    "homepage": "https://github.com/AlexisVS/multipass-testing-module",
     "license": "MIT",
     "authors": [
         {
-            "name": "AlexisVS",
+            "name": "VAN SAN Alexis",
             "email": "alexis.vansan1440@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "spatie/laravel-package-tools": "^1.14.0",
         "illuminate/contracts": "^10.0"
     },
@@ -31,8 +31,7 @@
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -66,7 +65,7 @@
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
             ],
             "aliases": {
-                "MultipassTestingModule": "AlexisVS\\MultipassTestingModule\\Facades\\MultipassTestingModule"
+                "MultipassTestingModule": "MultipassTestingModule"
             }
         }
     },

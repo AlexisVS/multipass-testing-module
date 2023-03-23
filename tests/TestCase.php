@@ -2,9 +2,9 @@
 
 namespace AlexisVS\MultipassTestingModule\Tests;
 
+use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -17,20 +17,18 @@ class TestCase extends Orchestra
         );
     }
 
+    public function getEnvironmentSetUp($app)
+    {
+        config()->set('database.default', 'testing');
+
+        $migration = include __DIR__.'/../database/migrations/create_testing_modules_table.php';
+        $migration->up();
+    }
+
     protected function getPackageProviders($app): array
     {
         return [
             MultipassTestingModuleServiceProvider::class,
         ];
-    }
-
-    public function getEnvironmentSetUp($app)
-    {
-        config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_multipass-testing-module_table.php.stub';
-        $migration->up();
-        */
     }
 }

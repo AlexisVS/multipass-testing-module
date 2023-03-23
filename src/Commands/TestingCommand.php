@@ -4,9 +4,9 @@ namespace AlexisVS\MultipassTestingModule\Commands;
 
 use Illuminate\Console\Command;
 
-class MultipassTestingModuleCommand extends Command
+class TestingCommand extends Command
 {
-    public $signature = 'multipass-testing-module';
+    public $signature = 'testing';
 
     public $description = 'My command';
 
