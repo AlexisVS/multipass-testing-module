@@ -82,7 +82,7 @@ TableName : pascal case
 
 _         : separator
 
-v0_0_0    : v + version of the seeder : It"s usefull because maybe you have model relationShip and 
+v0_0_0    : v + version of the seeder : It's usefull because maybe you have model relationShip and 
 
             you need to seed data before an another seeder. This versionning system allow you to do that.
             
