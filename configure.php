@@ -82,7 +82,7 @@ function remove_prefix(string $prefix, string $content): string
     return $content;
 }
 
-function remove_composer_deps(array $names)
+function remove_composer_deps(array $names): void
 {
     $data = json_decode(file_get_contents(__DIR__.'/composer.json'), true);
 
@@ -95,7 +95,7 @@ function remove_composer_deps(array $names)
     file_put_contents(__DIR__.'/composer.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 }
 
-function remove_composer_script($scriptName)
+function remove_composer_script($scriptName): void
 {
     $data = json_decode(file_get_contents(__DIR__.'/composer.json'), true);
 
@@ -119,7 +119,7 @@ function remove_readme_paragraphs(string $file): void
     );
 }
 
-function safeUnlink(string $filename)
+function safeUnlink(string $filename): void
 {
     if (file_exists($filename) && is_file($filename)) {
         unlink($filename);
