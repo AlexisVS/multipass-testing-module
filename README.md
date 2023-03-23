@@ -90,7 +90,8 @@ your file name need to follow a naming convention:
 5.  _Seeder   : end of seeder file
 
 Like this you seeder is correct and you can choose the order of our seeder by table.
-Maybe if the need arises, I will add ``ModuleName _ TableName _ v0_0_0 _ Seeder``
+Maybe if the need arises, I will add :
+``ModuleName _ TableName _ v0_0_0 _ Seeder``
 
 
 ## Changelog
