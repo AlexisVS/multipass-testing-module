@@ -78,16 +78,16 @@ your file name need to follow a naming convention:
 
 ``TableName_v0_0_0_Seeder.php``
 
-TableName : pascal case
+1.  TableName : pascal case
 
-_         : separator
+2.  _         : separator
 
-v0_0_0    : v + version of the seeder : It's usefull because maybe you have model relationShip and 
+3.  v0_0_0    : v + version of the seeder : It's usefull because maybe you have model relationShip and 
             you need to seed data before an another seeder. This versionning system allow you to do that.
             
-_         : separator
+4.  _         : separator
 
-_Seeder   : end of seeder file
+5.  _Seeder   : end of seeder file
 
 Like this you seeder is correct and you can choose the order of our seeder by table.
 Maybe if the need arises, I will add ``ModuleName _ TableName _ v0_0_0 _ Seeder``
