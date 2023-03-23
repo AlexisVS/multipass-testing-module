@@ -1,5 +1,6 @@
 {
     "name": ":vendor_slug/:package_slug",
+    "version" : "0.0.1",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
