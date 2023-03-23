@@ -14,8 +14,9 @@ class Skeleton extends BaseModuleClass
 
     public string $version = '0.0.1';
 
-    public string $namespace = 'VendorName' . '\\' . 'Skeleton';
+    public string $namespace = 'VendorName'.'\\'.'Skeleton';
+
     public string $class_name = 'Skeleton';
 
-    public string $vendor_path = ':vendor_slug' . '/' . ':package_slug';
+    public string $vendor_path = ':vendor_slug'.'/'.':package_slug';
 }

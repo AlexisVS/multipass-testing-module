@@ -14,15 +14,6 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
 ---
 <!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
@@ -70,6 +61,40 @@ echo $variable->echoPhrase('Hello, VendorName!');
 ```bash
 composer test
 ```
+
+## Migrations
+
+The migration system is really simple, you have two choices for the naming convention:
+
+1.  ``2022_10_12_000000_create_users_table.php`` : directly add timestamp and the rest of the file : _create_XXX_table
+2.  ``create_users_table.php``                   : At the migration process the app will add automatically a timsestamp.
+                                                   If you don't have any relationship in your migration this case is better.
+
+
+## Seeders
+
+For seeding you application with the module, 
+your file name need to follow a naming convention:
+
+``TableName_v0_0_0_Seeder.php``
+
+1.  TableName : pascal case
+
+2.  _         : separator
+
+3.  v0_0_0    : v + version of the seeder or module what you want ( I preconise to follow module version ) : It's usefull because maybe you have model relationShip and 
+            you need to seed data before an another seeder. This versionning system allow you to do that.
+            
+4.  _         : separator
+
+5.  _Seeder   : end of seeder file
+
+Like this you seeder is correct and you can choose the order of our seeder by table.
+
+Maybe if the need arises, I will add :
+
+``ModuleName _ TableName _ v0_0_0 _ Seeder``
+
 
 ## Changelog
 
