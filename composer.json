@@ -1,18 +1,18 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "alexisvs/multipass-testing-module",
     "version": "0.0.1",
-    "description": ":package_description",
+    "description": "This is the module for all testing purpose",
     "keywords": [
-        ":vendor_name",
+        "alexisvs",
         "laravel",
-        ":package_slug"
+        "multipass-testing-module"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/alexisvs/multipass-testing-module",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "AlexisVS",
+            "email": "alexis.vansan1440@gmail.com",
             "role": "Developer"
         }
     ],
@@ -36,14 +36,14 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/",
-            "VendorName\\Skeleton\\Database\\Migrations\\": "database/migrations/"
+            "AlexisVS\\MultipassTestingModule\\": "src/",
+            "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
+            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "MultipassTestingModule": "AlexisVS\\MultipassTestingModule\\Facades\\MultipassTestingModule"
             }
         }
     },

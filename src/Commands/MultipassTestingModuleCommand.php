@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace AlexisVS\MultipassTestingModule\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class MultipassTestingModuleCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'multipass-testing-module';
 
     public $description = 'My command';
 
