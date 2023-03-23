@@ -91,6 +91,7 @@ your file name need to follow a naming convention:
 
 Like this you seeder is correct and you can choose the order of our seeder by table.
 Maybe if the need arises, I will add :
+
 ``ModuleName _ TableName _ v0_0_0 _ Seeder``
 
 
