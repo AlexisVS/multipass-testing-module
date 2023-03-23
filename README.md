@@ -82,7 +82,7 @@ your file name need to follow a naming convention:
 
 2.  _         : separator
 
-3.  v0_0_0    : v + version of the seeder : It's usefull because maybe you have model relationShip and 
+3.  v0_0_0    : v + version of the seeder or module what you want ( I preconise to follow module version ) : It's usefull because maybe you have model relationShip and 
             you need to seed data before an another seeder. This versionning system allow you to do that.
             
 4.  _         : separator
