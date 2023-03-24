@@ -7,14 +7,16 @@ on:
 env:
   GITHUB_REPO_NAME: ${{ github.event.repository.name }}
   GITHUB_USER: ${{ github.repository_owner }}
-  VENDOR_USER: echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]'
-  VENDOR_PATH: $VENDOR_USER/$GITHUB_REPO_NAME
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      - id: lower-case_github_user
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: $GITHUB_USER
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: '8.2'
@@ -41,7 +43,7 @@ jobs:
             }
           ],
             "require": {
-              "${VENDOR_USER}/${MODULE_NAME}": "dev-main"
+              "$GITHUB_USER/$GITHUB_REPO_NAME": "dev-main"
             }
           }
           EOF
@@ -54,6 +56,6 @@ jobs:
 
       - name: Test module
         run: |
-          cd ./vendor/${VENDOR_PATH}
+          cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/$GITHUB_REPO_NAME
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
           vendor/bin/phpunit
