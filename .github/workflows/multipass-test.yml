@@ -48,7 +48,7 @@ jobs:
       - name: Update Composer modules
         run: composer update
 
-      - name: Test app
+      - name: Test app.
         run: vendor/bin/phpunit
 
       - name: Test module
