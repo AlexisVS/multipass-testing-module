@@ -29,8 +29,25 @@ jobs:
           ref: main
           token: ${{ secrets.PAT }}
 
-      - name: Run echo for knowing where Am I
-        run: pwd && ls -la
+      - name: Generate key
+        run: php artisan key:generate
+
+      - name: Directory and Permissions
+        run: |
+          mkdir -p storage/framework/{sessions,views,cache}
+          mkdir -p bootstrap/cache
+          chmod -R 777 storage bootstrap/cache
+
+      - name: Clear cache
+        run: php artisan cache:clear
+
+      - name: Create Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
+      - name: Build assets
+        run: npm install && npm run build
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
@@ -50,9 +67,6 @@ jobs:
             }
           }
           EOF
-
-      - name: Clear cache
-        run: php artisan cache:clear
 
       - name: Set up database
         run: php artisan migrate:fresh --seed
