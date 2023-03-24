@@ -71,13 +71,13 @@ jobs:
           }
           EOF
 
-      - name: Set up database
-        run: php artisan migrate:fresh --seed
-
       - name: Update Composer modules
         run: composer update
 
       - name: Test app.
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
         run: vendor/bin/phpunit
 
       - name: Test module
