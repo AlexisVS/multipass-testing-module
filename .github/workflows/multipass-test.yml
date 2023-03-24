@@ -8,7 +8,7 @@ env:
   GITHUB_REPO_NAME: ${{ github.event.repository.name }}
   GITHUB_USER: ${{ github.repository_owner }}
   VENDOR_USER: $(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')
-  VENDOR_PATH: ${{ env.VENDOR_USER }}/${{ env.GITHUB_REPO_NAME }}
+  VENDOR_PATH: $VENDOR_USER/$GITHUB_REPO_NAME
 
 jobs:
   build-and-test:
