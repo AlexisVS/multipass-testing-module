@@ -30,7 +30,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Where am I?
-        run: pwd && ls -la
+        run: pwd && ls -la && ls -la ..
 
       - name: Generate key
         run: php artisan key:generate
