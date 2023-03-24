@@ -18,7 +18,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          repository: AlexisVS/multipass
+          repository: AlexisVS/multipass.git
           ref: main
 
       - name: Install Composer dependencies
