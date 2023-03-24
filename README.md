@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This is my package for testing in one place all of multipass module features
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/AlexisVS/testing.svg?style=flat-square)](https://packagist.org/packages/AlexisVS/testing)
@@ -14,6 +15,24 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+=======
+# :package_description
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+<!--delete-->
+---
+This repo can be used to scaffold a Laravel package. Follow these steps to get started:
+
+1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
+2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
+3. Have fun creating your package.
+4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
+---
+<!--/delete-->
+>>>>>>> upstream/main
 
 ## Installation
 
@@ -61,6 +80,40 @@ echo $testing->echoPhrase('Hello, AlexisVS!');
 ```bash
 composer test
 ```
+
+## Migrations
+
+The migration system is really simple, you have two choices for the naming convention:
+
+1.  ``2022_10_12_000000_create_users_table.php`` : directly add timestamp and the rest of the file : _create_XXX_table
+2.  ``create_users_table.php``                   : At the migration process the app will add automatically a timsestamp.
+                                                   If you don't have any relationship in your migration this case is better.
+
+
+## Seeders
+
+For seeding you application with the module, 
+your file name need to follow a naming convention:
+
+``TableName_v0_0_0_Seeder.php``
+
+1.  TableName : pascal case
+
+2.  _         : separator
+
+3.  v0_0_0    : v + version of the seeder or module what you want ( I preconise to follow module version ) : It's usefull because maybe you have model relationShip and 
+            you need to seed data before an another seeder. This versionning system allow you to do that.
+            
+4.  _         : separator
+
+5.  _Seeder   : end of seeder file
+
+Like this you seeder is correct and you can choose the order of our seeder by table.
+
+Maybe if the need arises, I will add :
+
+``ModuleName _ TableName _ v0_0_0 _ Seeder``
+
 
 ## Changelog
 

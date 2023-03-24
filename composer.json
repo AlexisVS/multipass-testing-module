@@ -16,6 +16,12 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/AlexisVS/multipass"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "spatie/laravel-package-tools": "^1.14.0",
@@ -31,13 +37,15 @@
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0"
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "AlexisVS\\MultipassTestingModule\\": "src/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/"
+            "App\\": "../../../app/",
+            "VendorName\\Skeleton\\": "src/",
+            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/",
+            "VendorName\\Skeleton\\Database\\Migrations\\": "database/migrations/"
         }
     },
     "autoload-dev": {

@@ -1,6 +1,10 @@
 The MIT License (MIT)
 
+<<<<<<< HEAD
 Copyright (c) AlexisVS <alexis.vansan1440@gmail.com>
+=======
+Copyright (c) :vendor_name <author@domain.com>
+>>>>>>> upstream/main
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
