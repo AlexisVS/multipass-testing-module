@@ -16,12 +16,6 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/AlexisVS/multipass"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "spatie/laravel-package-tools": "^1.14.0",
