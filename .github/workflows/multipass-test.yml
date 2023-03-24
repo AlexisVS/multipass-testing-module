@@ -20,7 +20,6 @@ jobs:
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: '8.2'
-          node-version: '16'
 
       - name: Checkout code
         uses: actions/checkout@v3
@@ -58,4 +57,4 @@ jobs:
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/$GITHUB_REPO_NAME
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
-          vendor/bin/phpunit
+          vendor/bin/pest
