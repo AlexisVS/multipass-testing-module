@@ -1,0 +1,58 @@
+name: Module test
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+  GITHUB_USER: ${{ github.repository_owner }}
+  VENDOR_USER: ${{ github.repository_owner | lower }}
+  VENDOR_PATH: $VENDOR_USER/$GITHUB_REPO_NAME
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          repository: AlexisVS/multipass
+          ref: main
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+
+      - name: Create composer.modules.json and fill it
+        run: |
+          cat <<EOF > composer.modules.json
+          {
+            "repositories": [
+            {
+              "type": "vcs",
+              "url": ""https://github.com/${{ github.repository }}"
+            }
+          ],
+            "require": {
+              "${VENDOR_USER}/${MODULE_NAME}": "dev-main"
+            }
+          }
+          EOF
+
+      - name: Update Composer modules
+        run: composer update
+
+      - name: Test app
+        run: vendor/bin/phpunit
+
+      - name: Test module
+        run: |
+          cd ./vendor/${VENDOR_PATH}
+          composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+          vendor/bin/phpunit
