@@ -36,7 +36,7 @@ jobs:
             "repositories": [
             {
               "type": "vcs",
-              "url": ""https://github.com/${{ github.repository }}"
+              "url": "https://github.com/${{ github.repository }}"
             }
           ],
             "require": {
@@ -44,7 +44,6 @@ jobs:
             }
           }
           EOF
-          cat composer.modules.json
 
       - name: Update Composer modules
         run: composer update
