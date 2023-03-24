@@ -47,6 +47,12 @@ jobs:
           }
           EOF
 
+      - name: Clear cache
+        run: php artisan cache:clear
+
+      - name: Set up database
+        run: php artisan migrate:fresh --seed
+
       - name: Update Composer modules
         run: composer update
 
