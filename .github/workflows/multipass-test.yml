@@ -44,6 +44,7 @@ jobs:
             }
           }
           EOF
+          cat composer.modules.json
 
       - name: Update Composer modules
         run: composer update
