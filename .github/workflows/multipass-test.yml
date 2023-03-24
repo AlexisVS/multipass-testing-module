@@ -16,7 +16,7 @@ jobs:
       - id: lower-case_github_user
         uses: ASzc/change-string-case-action@v5
         with:
-          string: $GITHUB_USER
+          string: ${{ env.GITHUB_USER }}
 
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
