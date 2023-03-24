@@ -20,6 +20,7 @@ jobs:
         with:
           repository: 'AlexisVS/multipass'
           ref: main
+          token: ${{ secrets.PAT }}
 
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
