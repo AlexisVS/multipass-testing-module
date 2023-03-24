@@ -29,6 +29,9 @@ jobs:
           ref: main
           token: ${{ secrets.PAT }}
 
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+
       - name: Where am I?
         run: pwd && ls -la && ls -la ..
 
@@ -51,9 +54,6 @@ jobs:
 
       - name: Build assets
         run: npm install && npm run build
-
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
       - name: Create composer.modules.json and fill it
         run: |
