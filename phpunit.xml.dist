@@ -17,7 +17,7 @@
 >
     <testsuites>
         <testsuite name="AlexisVS Test Suite">
-            <directory>./tests</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <coverage>
