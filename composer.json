@@ -48,7 +48,8 @@
             "Src\\core\\module\\": "../../../src/core/module/",
             "AlexisVS\\MultipassTestingModule\\": "src/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/"
+            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",
+            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/"
         }
     },
     "autoload-dev": {
@@ -77,7 +78,7 @@
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
             ],
             "aliases": {
-                "MultipassTestingModule": "MultipassTestingModule"
+                "MultipassTestingModule": "AlexisVS\\MultipassTestingModule\\Facades\\MultipassTestingModule"
             }
         }
     },

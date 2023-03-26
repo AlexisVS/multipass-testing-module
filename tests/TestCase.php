@@ -3,8 +3,10 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
+use File;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use SplFileInfo;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -21,9 +23,21 @@ class TestCase extends Orchestra
     {
 //        config()->set('database.default', 'testing');
         config()->set('database.testing', config('database.connections.sqlite'));
+        config()->set('database.default', config('database.connections.sqlite'));
 
-        $migration = include __DIR__.'/../database/migrations/create_testing_modules_table.php';
-        $migration->up();
+//        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
+//        $migration->up();
+
+        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
+        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
+
+        foreach ($moduleMigrations as $moduleMigration) {
+            if (!in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn(SplFileInfo $file) => $file->getFilename())->toArray())) {
+                $moduleMigration = include $moduleMigration->getPathname();
+                $moduleMigration->up();
+            }
+        }
+
     }
 
     protected function getPackageProviders($app): array
@@ -31,5 +45,10 @@ class TestCase extends Orchestra
         return [
             MultipassTestingModuleServiceProvider::class,
         ];
+    }
+
+    public static function applicationBasePath(): string
+    {
+        return __DIR__ . '/../../../../';
     }
 }
