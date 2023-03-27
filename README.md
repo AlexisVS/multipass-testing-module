@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This is my package for testing in one place all of multipass module features
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/AlexisVS/testing.svg?style=flat-square)](https://packagist.org/packages/AlexisVS/testing)
