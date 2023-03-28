@@ -61,7 +61,11 @@
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
+        "test": [
+            "@php ../../../artisan package:discover --ansi",
+            "@php ../../../artisan migrate:fresh --seed --ansi --env=testing",
+            "vendor/bin/pest"
+        ],
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
