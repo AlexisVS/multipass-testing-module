@@ -63,7 +63,6 @@
         "analyse": "vendor/bin/phpstan analyse",
         "test": [
             "@php ../../../artisan package:discover --ansi",
-            "@php ../../../artisan migrate:fresh --seed --ansi --env=testing",
             "vendor/bin/pest"
         ],
         "test-coverage": "vendor/bin/pest --coverage",
