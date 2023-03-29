@@ -5,6 +5,7 @@ namespace AlexisVS\MultipassTestingModule\Tests;
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
 use File;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Laravel\Sanctum\SanctumServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use SplFileInfo;
 
@@ -42,6 +43,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
+            SanctumServiceProvider::class,
             MultipassTestingModuleServiceProvider::class,
         ];
     }
