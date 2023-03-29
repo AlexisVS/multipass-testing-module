@@ -10,12 +10,14 @@ use SplFileInfo;
 
 class TestCase extends Orchestra
 {
+    use
+
     protected function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -28,11 +30,11 @@ class TestCase extends Orchestra
 //        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
 //        $migration->up();
 
-        $moduleMigrations = File::files(__DIR__.'/../database/migrations');
-        $applicationMigrations = collect(File::files(__DIR__.'/../../../../database/migrations'));
+        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
+        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
 
         foreach ($moduleMigrations as $moduleMigration) {
-            if (! in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn (SplFileInfo $file) => $file->getFilename())->toArray())) {
+            if (!in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn(SplFileInfo $file) => $file->getFilename())->toArray())) {
                 $moduleMigration = include $moduleMigration->getPathname();
                 $moduleMigration->up();
             }
@@ -46,8 +48,8 @@ class TestCase extends Orchestra
         ];
     }
 
-    public static function applicationBasePath(): string
+    protected function getBasePath(): string
     {
-        return __DIR__.'/../../../../';
+        return __DIR__ . '/../../../../';
     }
 }
