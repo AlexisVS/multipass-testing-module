@@ -5,18 +5,35 @@ namespace AlexisVS\MultipassTestingModule\Tests;
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
 use File;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\SanctumServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use SplFileInfo;
 
 class TestCase extends Orchestra
 {
+    use RefreshDatabase;
+    /**
+     * Automatically enables package discoveries.
+     *
+     * @var bool
+     */
+    protected $enablesPackageDiscoveries = true;
+
+    /**
+     * Automatically loads environment variables.
+     *
+     * @var bool
+     */
+    protected $loadEnvironmentVariables = true;
+
+
     protected function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -29,11 +46,11 @@ class TestCase extends Orchestra
 //        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
 //        $migration->up();
 
-        $moduleMigrations = File::files(__DIR__.'/../database/migrations');
-        $applicationMigrations = collect(File::files(__DIR__.'/../../../../database/migrations'));
+        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
+        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
 
         foreach ($moduleMigrations as $moduleMigration) {
-            if (! in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn (SplFileInfo $file) => $file->getFilename())->toArray())) {
+            if (!in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn(SplFileInfo $file) => $file->getFilename())->toArray())) {
                 $moduleMigration = include $moduleMigration->getPathname();
                 $moduleMigration->up();
             }
@@ -48,8 +65,13 @@ class TestCase extends Orchestra
         ];
     }
 
+    public static function applicationBasePath(): string
+    {
+        return __DIR__ . '/../../../../';
+    }
+
     protected function getBasePath(): string
     {
-        return __DIR__.'/../../../../';
+        return __DIR__ . '/../../../../';
     }
 }
