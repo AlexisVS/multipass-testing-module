@@ -10,8 +10,6 @@ use SplFileInfo;
 
 class TestCase extends Orchestra
 {
-    use
-
     protected function setUp(): void
     {
         parent::setUp();
