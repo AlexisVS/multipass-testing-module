@@ -38,9 +38,9 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-//        config()->set('database.default', 'testing');
-        config()->set('database.testing', config('database.connections.sqlite'));
-        config()->set('database.default', config('database.connections.sqlite'));
+        config()->set('database.default', 'testing');
+//        config()->set('database.testing', config('database.connections.sqlite'));
+//        config()->set('database.default', config('database.connections.sqlite'));
 
 //        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
 //        $migration->up();
