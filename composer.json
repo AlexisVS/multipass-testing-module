@@ -21,6 +21,7 @@
         "illuminate/contracts": "^10.0",
         "laravel/horizon": "^5.10",
         "laravel/sanctum": "^v3.2",
+        "laravel/telescope": "^4.14",
         "spatie/enum": "^3.13",
         "spatie/laravel-data": "^2.0",
         "spatie/laravel-medialibrary": "^10.6",

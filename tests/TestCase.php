@@ -60,7 +60,6 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            TelescopeServiceProvider::class,
             MultipassTestingModuleServiceProvider::class,
         ];
     }
