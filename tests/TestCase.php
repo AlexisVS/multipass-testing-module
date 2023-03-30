@@ -32,7 +32,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
@@ -44,7 +44,6 @@ class TestCase extends Orchestra
 
 //        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
 //        $migration->up();
-
 
 //        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
 //        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
@@ -66,11 +65,11 @@ class TestCase extends Orchestra
 
     public static function applicationBasePath(): string
     {
-        return __DIR__ . '/../../../../';
+        return __DIR__.'/../../../../';
     }
 
     protected function getBasePath(): string
     {
-        return __DIR__ . '/../../../../';
+        return __DIR__.'/../../../../';
     }
 }
