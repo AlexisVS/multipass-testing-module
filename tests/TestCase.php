@@ -3,7 +3,6 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
-use App\Providers\TelescopeServiceProvider;
 use File;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
