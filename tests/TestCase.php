@@ -46,15 +46,21 @@ class TestCase extends Orchestra
 //        $migration = include __DIR__ . '/../database/migrations/create_testing_modules_table.php';
 //        $migration->up();
 
-        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
-        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
 
-        foreach ($moduleMigrations as $moduleMigration) {
-            if (!in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn(SplFileInfo $file) => $file->getFilename())->toArray())) {
-                $moduleMigration = include $moduleMigration->getPathname();
-                $moduleMigration->up();
-            }
-        }
+
+
+
+
+
+//        $moduleMigrations = File::files(__DIR__ . '/../database/migrations');
+//        $applicationMigrations = collect(File::files(__DIR__ . '/../../../../database/migrations'));
+//
+//        foreach ($moduleMigrations as $moduleMigration) {
+//            if (!in_array($moduleMigration->getFilename(), $applicationMigrations->map(fn(SplFileInfo $file) => $file->getFilename())->toArray())) {
+//                $moduleMigration = include $moduleMigration->getPathname();
+//                $moduleMigration->up();
+//            }
+//        }
     }
 
     protected function getPackageProviders($app): array
