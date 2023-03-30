@@ -11,7 +11,7 @@ use SplFileInfo;
 
 class TestCase extends Orchestra
 {
-    use RefreshDatabase;
+//    use RefreshDatabase;
 
     /**
      * Automatically enables package discoveries.
