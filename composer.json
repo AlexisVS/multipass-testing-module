@@ -18,7 +18,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^10.0",
+        "laravel/sanctum": "^v3.2"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -78,6 +79,7 @@
         "laravel": {
             "providers": [
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
+
             ],
             "aliases": {
                 "MultipassTestingModule": "AlexisVS\\MultipassTestingModule\\Facades\\MultipassTestingModule"
