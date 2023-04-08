@@ -49,6 +49,7 @@
             "App\\": "../../../app/",
             "Src\\": "../../../src/",
             "Database\\": "../../../database/",
+            "Database\\Factories\\": "../../../database/factories/",
             "AlexisVS\\MultipassTestingModule\\": "src/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
             "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",
