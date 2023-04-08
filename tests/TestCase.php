@@ -31,9 +31,9 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-//        Factory::guessFactoryNamesUsing(
-//            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
-//        );
+        Factory::guessFactoryNamesUsing(
+            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
+        );
     }
 
     public function getEnvironmentSetUp($app)
