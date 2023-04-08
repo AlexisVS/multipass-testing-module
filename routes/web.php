@@ -6,7 +6,7 @@ $module = Module::where('name', 'multipass-testing-module')->first();
 
 Route::name('module.'.$module->name)->prefix('module/'.$module->name)->group(function () {
     Route::get('/', function () {
-        return response('Hello from Multipass Testing Module!', 200);
+        return new \Illuminate\Http\Response('Hello from Multipass Testing Module!', 200);
     })->name('.get');
 
     Route::post('test', function () {
