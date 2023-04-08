@@ -2,7 +2,16 @@
 
 use App\Models\User;
 
-it('can create and retrieve an app entities', function () {
+
+it('can find an app entity', function () {
+    // Arrange
+    $user = User::find(1);
+
+    // Assert
+    expect($user)->toBeInstanceOf(User::class);
+});
+
+it('can create an app entities', function () {
     // Arrange
     $user = Database\Factories\UserFactory::new()->create();
 
