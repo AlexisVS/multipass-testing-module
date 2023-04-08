@@ -11,9 +11,9 @@ it('can find an app entity', function () {
     expect($user)->toBeInstanceOf(User::class);
 });
 
-it('can create an app entities', function () {
+it('can create an app entities with factory', function () {
     // Arrange
-    $user = Database\Factories\UserFactory::new()->create();
+    $user = User::factory()->create();
 
     // Act
     $retrievedUser = User::find($user->id);
