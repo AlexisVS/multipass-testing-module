@@ -32,9 +32,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
-      - name: Where am I?
-        run: pwd && ls -la && ls -la ..
-
       - name: Generate key
         run: php artisan key:generate
 

@@ -30,17 +30,6 @@
             <clover outputFile="build/logs/clover.xml"/>
         </report>
     </coverage>
-    <php>
-<!--        <env name="APP_ENV" value="testing"/>-->
-<!--        <env name="APP_KEY" value="qsdgf53s1dgsd3f5sddf35sdf"/>-->
-<!--        <env name="BCRYPT_ROUNDS" value="4"/>-->
-<!--        <env name="CACHE_DRIVER" value="array"/>-->
-<!--        <env name="DB_DATABASE" value="testing"/>-->
-<!--        <env name="MAIL_MAILER" value="array"/>-->
-<!--        <env name="QUEUE_CONNECTION" value="database"/>-->
-<!--        <env name="SESSION_DRIVER" value="array"/>-->
-<!--        <env name="TELESCOPE_ENABLED" value="false"/>-->
-    </php>
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>

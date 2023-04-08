@@ -81,7 +81,6 @@
         "laravel": {
             "providers": [
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
-
             ],
             "aliases": {
                 "MultipassTestingModule": "AlexisVS\\MultipassTestingModule\\Facades\\MultipassTestingModule"

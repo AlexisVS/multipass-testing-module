@@ -5,3 +5,8 @@
 //    ->each
 //    ->not
 //    ->toBeUsed();
+
+it('Can access app entities')
+    ->expect(['App\Models\User'])
+    ->each
+    ->toImplement('Illuminate\Contracts\Auth\Authenticatable');
