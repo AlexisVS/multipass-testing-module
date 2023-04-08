@@ -50,6 +50,8 @@
             "Src\\": "../../../src/",
             "Database\\": "../../../database/",
             "Database\\Factories\\": "../../../database/factories/",
+            "Database\\Migrations\\": "../../../database/migrations/",
+            "Database\\Seeders\\\\": "../../../database/seeders/",
             "AlexisVS\\MultipassTestingModule\\": "src/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
             "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",
