@@ -1,6 +1,6 @@
 <?php
 
-it('can access the home page', function () {
+it('can access the App home page', function () {
     $this->get('/')->assertStatus(200);
 });
 
