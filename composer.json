@@ -48,6 +48,7 @@
         "psr-4": {
             "App\\": "../../../app/",
             "Src\\": "../../../src/",
+            "Database\\": "../../../database/",
             "AlexisVS\\MultipassTestingModule\\": "src/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
             "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",

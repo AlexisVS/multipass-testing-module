@@ -4,7 +4,7 @@ use App\Models\User;
 
 it('can create and retrieve an app entities', function () {
     // Arrange
-    $user = User::factory()->create();
+    $user = Database\Factories\UserFactory::new()->create();
 
     // Act
     $retrievedUser = User::find($user->id);
