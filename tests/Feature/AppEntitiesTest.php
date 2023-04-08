@@ -2,7 +2,6 @@
 
 use App\Models\User;
 
-
 it('can find an app entity', function () {
     // Arrange
     $user = User::find(1);
