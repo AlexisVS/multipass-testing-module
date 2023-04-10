@@ -23,19 +23,19 @@ class TestCase extends Orchestra
      */
     protected $loadEnvironmentVariables = true;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
+//    protected function setUp(): void
+//    {
+//        parent::setUp();
+//
+////        Factory::guessFactoryNamesUsing(
+////            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
+////        );
+//    }
 
-//        Factory::guessFactoryNamesUsing(
-//            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
-//        );
-    }
-
-    public function getEnvironmentSetUp($app): void
-    {
-        config()->set('database.default', 'testing');
-    }
+//    public function getEnvironmentSetUp($app): void
+//    {
+//        config()->set('database.', 'testing');
+//    }
 
     protected function getPackageProviders($app): array
     {
