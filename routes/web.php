@@ -15,7 +15,7 @@ Route::name('module.' . $module->name)
             return 'Hello from Multipass Testing Module!';
         });
 
-        Route::get('page', function () {
+        Route::get('/page', function () {
             return 'Hello from Multipass Testing Module!';
         });
     });
