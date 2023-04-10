@@ -32,10 +32,10 @@ class TestCase extends Orchestra
 ////        );
 //    }
 
-//    public function getEnvironmentSetUp($app): void
-//    {
-//        config()->set('database.', 'testing');
-//    }
+    public function getEnvironmentSetUp($app): void
+    {
+        config()->set('database.', 'testing');
+    }
 
     protected function getPackageProviders($app): array
     {
