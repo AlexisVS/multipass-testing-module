@@ -3,11 +3,9 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
-use File;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
-use SplFileInfo;
 
 class TestCase extends Orchestra
 {
