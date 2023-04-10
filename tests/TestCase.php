@@ -3,11 +3,13 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
 //    use RefreshDatabase;
+    use InteractsWithDatabase;
 
     /**
      * Automatically enables package discoveries.
