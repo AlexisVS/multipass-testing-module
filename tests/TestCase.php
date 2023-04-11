@@ -8,9 +8,6 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
-//    use RefreshDatabase;
-//    use InteractsWithDatabase; /** peut etre */
-
     /**
      * Automatically enables package discoveries.
      *
@@ -24,15 +21,6 @@ class TestCase extends Orchestra
      * @var bool
      */
     protected $loadEnvironmentVariables = true;
-
-//    protected function setUp(): void
-//    {
-//        parent::setUp();
-//
-////        Factory::guessFactoryNamesUsing(
-////            fn (string $modelName) => 'AlexisVS\\MultipassTestingModule\\Database\\Factories\\'.class_basename($modelName).'Factory'
-////        );
-//    }
 
     public function getEnvironmentSetUp($app): void
     {
