@@ -5,7 +5,7 @@ namespace AlexisVS\MultipassTestingModule\Database\Seeders;
 use AlexisVS\MultipassTestingModule\Models\Entity;
 use Illuminate\Database\Seeder;
 
-class EntityV001Seeder extends Seeder
+class EntityV000Seeder extends Seeder
 {
     /**
      * Run the database seeds.
