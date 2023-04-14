@@ -23,10 +23,7 @@ Route::name('module.'.$module->name.'.')
             return Inertia::render($module->getResourcesPagePath('Front'));
         })->name('front');
 
-<<<<<<< HEAD
         Route::resource('/entity', EntityController::class)->except(['create', 'edit']);
-=======
->>>>>>> f7bb7ff2cf2b27ee814402ff4bc59232bb95347a
     });
 
 // BACK
