@@ -9,7 +9,7 @@ Route::name('module.' . $module->name)
     ->prefix('module/' . $module->name)
     ->group(function () use ($module) {
 
-        Route::get('/', function () {
+        Route::get('/test-response', function () {
             return new \Illuminate\Http\Response(
                 content: 'Hello from Multipass Testing Module!',
                 status: 200

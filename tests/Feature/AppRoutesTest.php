@@ -5,5 +5,5 @@ it('can access the App home page', function () {
 });
 
 it('can access his own route', function () {
-    $this->get('/module/multipass-testing-module')->assertStatus(200);
+    $this->get('/module/multipass-testing-module/test-response')->assertStatus(200);
 });
