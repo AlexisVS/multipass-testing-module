@@ -1,11 +1,12 @@
 <?php
 
 use App\Models\Module;
+use Inertia\Inertia;
 
 $module = Module::where('name', 'multipass-testing-module')->first();
 
-Route::name('module.'.$module->name)
-    ->prefix('module/'.$module->name)
+Route::name('module.' . $module->name)
+    ->prefix('module/' . $module->name)
     ->group(function () {
 
         Route::get('/', function () {
@@ -15,11 +16,11 @@ Route::name('module.'.$module->name)
             );
         });
 
-        Route::post('test', function () {
-            return 'Hello from Multipass Testing Module!';
+        Route::get('/front', function () {
+            return Inertia::render('Front');
         });
 
-        Route::get('/page', function () {
-            return 'Hello from Multipass Testing Module!';
+        Route::get('/back', function () {
+            return Inertia::render('Back');
         });
     });
