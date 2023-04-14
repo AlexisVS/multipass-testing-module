@@ -1,5 +1,6 @@
 <?php
 
+use AlexisVS\MultipassTestingModule\Http\Controllers\EntityController;
 use App\Enums\Permissions\DashboardPermissionsEnum;
 use App\Models\Module;
 use Inertia\Inertia;
@@ -22,7 +23,7 @@ Route::name('module.' . $module->name . '.')
             return Inertia::render($module->getResourcesPagePath('Front'));
         })->name('front');
 
-
+        Route::resource('/entity', EntityController::class)->except(['create', 'edit']);
     });
 
 // BACK
