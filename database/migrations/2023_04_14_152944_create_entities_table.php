@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Schema;
  * Don't change FileName !!!!!!!
  * It's for testing purposes
  */
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
