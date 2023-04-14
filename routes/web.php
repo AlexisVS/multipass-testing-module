@@ -9,8 +9,8 @@ use Inertia\Inertia;
 $module = Module::where('name', 'multipass-testing-module')->first();
 
 // FRONT
-Route::name('module.' . $module->name . '.')
-    ->prefix('module/' . $module->name)
+Route::name('module.'.$module->name.'.')
+    ->prefix('module/'.$module->name)
     ->group(function () use ($module) {
 
         Route::get('/test-response', function () {
@@ -28,9 +28,9 @@ Route::name('module.' . $module->name . '.')
     });
 
 // BACK
-Route::name('administration.module' . $module->name . '.')
-    ->prefix('administration/module/' . $module->name)
-    ->middleware(['auth', 'verified', 'permission:' . DashboardPermissionsEnum::LookDashboard->value])
+Route::name('administration.module'.$module->name.'.')
+    ->prefix('administration/module/'.$module->name)
+    ->middleware(['auth', 'verified', 'permission:'.DashboardPermissionsEnum::LookDashboard->value])
     ->group(function () use ($module) {
 
         Route::get('/back', function () use ($module) {
