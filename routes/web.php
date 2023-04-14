@@ -1,12 +1,14 @@
 <?php
 
+use App\Enums\Permissions\DashboardPermissionsEnum;
 use App\Models\Module;
 use Inertia\Inertia;
 
 $module = Module::where('name', 'multipass-testing-module')->first();
 
-Route::name('module.'.$module->name.'.')
-    ->prefix('module/'.$module->name)
+// FRONT
+Route::name('module.' . $module->name . '.')
+    ->prefix('module/' . $module->name)
     ->group(function () use ($module) {
 
         Route::get('/test-response', function () {
@@ -19,6 +21,15 @@ Route::name('module.'.$module->name.'.')
         Route::get('/front', function () use ($module) {
             return Inertia::render($module->getResourcesPagePath('Front'));
         })->name('front');
+
+
+    });
+
+// BACK
+Route::name('administration.module' . $module->name . '.')
+    ->prefix('administration/module/' . $module->name)
+    ->middleware(['auth', 'verified', 'permission:' . DashboardPermissionsEnum::LookDashboard->value])
+    ->group(function () use ($module) {
 
         Route::get('/back', function () use ($module) {
             return Inertia::render($module->getResourcesPagePath('Back'));
