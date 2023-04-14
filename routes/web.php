@@ -5,8 +5,8 @@ use Inertia\Inertia;
 
 $module = Module::where('name', 'multipass-testing-module')->first();
 
-Route::name('module.' . $module->name)
-    ->prefix('module/' . $module->name)
+Route::name('module.'.$module->name)
+    ->prefix('module/'.$module->name)
     ->group(function () {
 
         Route::get('/', function () {
