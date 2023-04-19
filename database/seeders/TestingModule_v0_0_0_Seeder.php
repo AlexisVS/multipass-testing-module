@@ -3,7 +3,6 @@
 namespace AlexisVS\MultipassTestingModule\Database\Seeders;
 
 use AlexisVS\MultipassTestingModule\Database\Factories\TestingModuleFactory;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class TestingModuleV000Seeder extends Seeder

@@ -3,7 +3,6 @@
 namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Src\core\module\ModuleFactory;
 
 class TestingModuleFactory extends ModuleFactory
