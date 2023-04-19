@@ -2,14 +2,12 @@
 
 namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
-use AlexisVS\MultipassTestingModule\Models\TestingModule;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Src\core\module\ModuleFactory;
 
-class TestingModuleFactory extends Factory
+class TestingModuleFactory extends ModuleFactory
 {
-    protected $model = TestingModule::class;
-
     /**
      * Define the model's default state.
      */

@@ -13,10 +13,7 @@ class TestingModuleV000Seeder extends Seeder
      */
     public function run(): void
     {
-        foreach (User::all() as $user) {
-            (new TestingModuleFactory())->create([
-                'user_id' => $user->id,
-            ]);
-        }
+        (new TestingModuleFactory())->count(3)->create();
+        TestingModuleFactory::new()->count(3)->create();
     }
 }

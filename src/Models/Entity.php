@@ -3,13 +3,12 @@
 namespace AlexisVS\MultipassTestingModule\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Src\core\module\models\ModuleModel;
 
-class Entity extends Model
+class Entity extends ModuleModel
 {
-    use HasFactory;
-
     protected $fillable = [
         'name',
     ];
+
 }

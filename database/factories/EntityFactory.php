@@ -4,11 +4,12 @@ namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
 use AlexisVS\MultipassTestingModule\Models\Entity;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Src\core\module\ModuleFactory;
 
 /**
  * @extends Factory<Entity>
  */
-class EntityFactory extends Factory
+class EntityFactory extends ModuleFactory
 {
     /**
      * Define the model's default state.

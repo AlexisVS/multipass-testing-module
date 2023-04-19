@@ -2,10 +2,8 @@
 
 namespace AlexisVS\MultipassTestingModule\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Src\core\module\models\ModuleModel;
 
-class TestingModule extends Model
+class TestingModule extends ModuleModel
 {
-    use HasFactory;
 }
