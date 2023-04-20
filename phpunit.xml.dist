@@ -21,9 +21,6 @@
         </testsuite>
     </testsuites>
     <coverage>
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
         <report>
             <html outputDirectory="build/coverage"/>
             <text outputFile="build/coverage.txt"/>
@@ -33,6 +30,11 @@
     <php>
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
+    <source>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
