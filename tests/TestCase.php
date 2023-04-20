@@ -1,5 +1,7 @@
 <?php
 
+namespace AlexisVS\MultipassTestingModule\Tests;
+
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -33,11 +35,11 @@ class TestCase extends Orchestra
 
     public static function applicationBasePath(): string
     {
-        return __DIR__ . '/../../../../';
+        return __DIR__.'/../../../../';
     }
 
     protected function getBasePath(): string
     {
-        return __DIR__ . '/../../../../';
+        return __DIR__.'/../../../../';
     }
 }
