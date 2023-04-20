@@ -4,7 +4,6 @@ namespace AlexisVS\MultipassTestingModule\Actions;
 
 use App\Models\Hook;
 use Exception;
-use Inertia\Response;
 use Lorisleiva\Actions\Concerns\AsAction;
 use Src\core\hook\HookProcessor;
 
