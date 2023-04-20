@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 
 it('can find an app entity', function () {
     // Arrange
@@ -19,4 +20,13 @@ it('can create an app entities with factory', function () {
 
     // Assert
     expect($retrievedUser)->toBeInstanceOf(User::class);
+});
+
+it('can create a lot of app entities with factory', function () {
+    // Arrange
+    $users = User::factory()->count(10)->create();
+
+    // Assert
+    expect($users)->toBeInstanceOf(Collection::class);
+    expect($users->count())->toBe(10);
 });
