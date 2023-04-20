@@ -32,6 +32,7 @@ class EntityController extends Controller
     {
         $entity->fill($request->all());
         $entity->save();
+
         return $entity;
     }
 
@@ -58,6 +59,7 @@ class EntityController extends Controller
     {
         $entity->fill($request->all());
         $entity->save();
+
         return $entity;
     }
 
@@ -69,6 +71,7 @@ class EntityController extends Controller
         /** @var Entity $entity */
         $entity = Entity::find($id);
         $entity->delete();
+
         return $entity;
     }
 }
