@@ -1,7 +1,7 @@
 {
     "name": "alexisvs/multipass-testing-module",
     "description": "This is my package for testing in one place all of multipass module features",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": [
         "AlexisVS",
         "laravel",
@@ -48,7 +48,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "../../../app/",
-            "App\\Enums\\": "app/Enums/",
+            "App\\Enums\\": "../../../app/Enums/",
             "App\\Enums\\Permissions\\": "../../../app/Enums/Permissions/",
             "Src\\": "../../../src/",
             "Src\\core\\": "../../../src/core",
@@ -60,6 +60,7 @@
             "Src\\core\\component\\interfaces\\": "../../../src/core/component/interfaces/",
             "Src\\core\\hook\\": "../../../src/core/hook/",
             "Src\\core\\module\\": "../../../src/core/module/",
+            "Src\\core\\models\\": "../../../src/core/models/",
             "Database\\": "../../../database/",
             "Database\\Factories\\": "../../../database/factories/",
             "Database\\Migrations\\": "../../../database/migrations/",
@@ -74,8 +75,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/",
-            "AlexisVS\\MultipassTestingModule\\": "src/"
+            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/"
         }
     },
     "scripts": {
