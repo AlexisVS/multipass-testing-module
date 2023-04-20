@@ -81,7 +81,7 @@
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
         "test": [
-            "@php artisan optimize:clear",
+            "@php ../../../artisan optimize:clear",
             "@php ../../../artisan package:discover --ansi",
             "@php ./vendor/bin/pest"
         ],
