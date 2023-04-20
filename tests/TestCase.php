@@ -9,15 +9,11 @@ class TestCase extends Orchestra
 {
     /**
      * Automatically enables package discoveries.
-     *
-     * @var bool
      */
     protected $enablesPackageDiscoveries = true;
 
     /**
      * Automatically loads environment variables.
-     *
-     * @var bool
      */
     protected $loadEnvironmentVariables = true;
 

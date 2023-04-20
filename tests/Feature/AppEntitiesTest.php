@@ -27,6 +27,6 @@ it('can create a lot of app entities with factory', function () {
     $users = User::factory()->count(10)->create();
 
     // Assert
-    expect($users)->toBeInstanceOf(Collection::class);
-    expect($users->count())->toBe(10);
+    expect($users)->toBeInstanceOf(Collection::class)
+        ->and($users->count())->toBe(10);
 });

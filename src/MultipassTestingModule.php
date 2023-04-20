@@ -32,5 +32,6 @@ class MultipassTestingModule extends BaseModuleClass
         ComponentBuilder::build('TestComponent', HookEnum::EditProfileForm->value, $this->name)
             ->hasData('testSimpleProps', 'testSimpleProps', ComponentDataTypeEnum::Simple->value)
             ->hasData('testModelProps', $modelPropsSql, ComponentDataTypeEnum::Model->value, User::class);
+
     }
 }

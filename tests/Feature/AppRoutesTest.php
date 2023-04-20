@@ -21,7 +21,7 @@ it('can access his own route (Entity route ressource), access controller and ret
 });
 
 it('can post to Entity.post route', function () {
-    $request = $this->post('/module/multipass-testing-module/entity', [
+    $this->post('/module/multipass-testing-module/entity', [
         'name' => 'can post to Entity.post route',
     ]);
 
