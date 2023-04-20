@@ -60,7 +60,6 @@
             "Src\\core\\component\\interfaces\\": "../../../src/core/component/interfaces/",
             "Src\\core\\hook\\": "../../../src/core/hook/",
             "Src\\core\\module\\": "../../../src/core/module/",
-            "Src\\core\\models\\": "../../../src/core/models/",
             "Database\\": "../../../database/",
             "Database\\Factories\\": "../../../database/factories/",
             "Database\\Migrations\\": "../../../database/migrations/",
@@ -70,7 +69,6 @@
             "AlexisVS\\MultipassTestingModule\\Http\\Controllers\\": "src/Http/Controllers/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
             "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",
-            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/"
         }
     },
     "autoload-dev": {
