@@ -6,10 +6,11 @@ use AlexisVS\MultipassTestingModule\Actions\SendHookComponentToPageAction;
 use App\Http\Controllers\Controller;
 use App\Models\Module;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class HookController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         $data = SendHookComponentToPageAction::run();
 
