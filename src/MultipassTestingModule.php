@@ -3,7 +3,7 @@
 namespace AlexisVS\MultipassTestingModule;
 
 use App\Enums\Component\ComponentDataTypeEnum;
-use App\Enums\Entities\Hook\HookEnum;
+use App\Models\Hook;
 use App\Models\User;
 use Src\core\component\ComponentBuilder;
 use Src\core\module\modules\BaseModuleClass;
@@ -26,12 +26,14 @@ class MultipassTestingModule extends BaseModuleClass
 
     public function installVueComponents(): void
     {
-//        TODO: C'est comme ça qu'on enregistre le query et qu'on l'appelle
+        // TODO: C'est comme ça qu'on enregistre le query et qu'on l'appelle
         $modelPropsSql = 'App\Models\User::all()';
 
-        ComponentBuilder::build('TestComponent', HookEnum::EditProfileForm->value, $this->name)
+        $hook = Hook::where('name', '=', 'module.multipass-testing-module.hook.component')
+            ->first();
+
+        ComponentBuilder::build('TestComponent', $hook, $this->name)
             ->hasData('testSimpleProps', 'testSimpleProps', ComponentDataTypeEnum::Simple->value)
             ->hasData('testModelProps', $modelPropsSql, ComponentDataTypeEnum::Model->value, User::class);
-
     }
 }

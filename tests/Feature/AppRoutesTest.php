@@ -5,7 +5,7 @@ use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
 
 it('can access the App home page', function () {
-    $this->get('/')->assertStatus(200);
+    $this->get('/')->assertOk();
 });
 
 it('can access his own route', function () {
