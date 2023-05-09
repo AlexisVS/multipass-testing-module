@@ -2,7 +2,7 @@
 
 namespace AlexisVS\MultipassTestingModule;
 
-use Src\core\module\ModuleServiceProvider;
+use App\Domain\Module\ModuleServiceProvider;
 
 class MultipassTestingModuleServiceProvider extends ModuleServiceProvider
 {

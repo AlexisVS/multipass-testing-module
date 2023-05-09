@@ -2,8 +2,8 @@
 
 namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
-use App\Models\User;
-use Src\core\module\ModuleFactory;
+use App\Domain\Module\ModuleFactory;
+use App\Domain\User\Models\User;
 
 class TestingModuleFactory extends ModuleFactory
 {

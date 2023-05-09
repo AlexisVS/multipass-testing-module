@@ -2,8 +2,8 @@
 
 use AlexisVS\MultipassTestingModule\Http\Controllers\EntityController;
 use AlexisVS\MultipassTestingModule\Http\Controllers\HookController;
-use App\Enums\Permissions\DashboardPermissionsEnum;
-use App\Models\Module;
+use App\Domain\Module\Models\Module;
+use App\Domain\Permissions\Enums\DashboardPermissionsEnum;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -27,7 +27,8 @@ Route::name('module.'.$module->name.'.')
 
         Route::resource('/entity', EntityController::class)->except(['create', 'edit']);
 
-        Route::get('/hook', [HookController::class, 'index'])->name('hook.component');
+        Route::get('/hook', [HookController::class, 'index'])->name('hook.Component');
+        Route::get('/hook/trigger', [HookController::class, 'trigger'])->name('hook.trigger');
     });
 
 // BACK

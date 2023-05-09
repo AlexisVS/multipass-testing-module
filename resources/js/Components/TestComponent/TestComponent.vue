@@ -7,12 +7,8 @@
             />
 
             <q-card-section>
-                <div class="text-h6">My module test component</div>
+                <div class="text-h6">My module test Component</div>
                 <div class="text-subtitle2">by John Doe</div>
-                <q-btn-group push>
-                    <q-btn push label="GET" icon="timeline" />
-                    <q-btn push label="POST" icon="visibility" />
-                </q-btn-group>
             </q-card-section>
         </q-card>
     </div>

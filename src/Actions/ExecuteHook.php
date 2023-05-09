@@ -2,12 +2,12 @@
 
 namespace AlexisVS\MultipassTestingModule\Actions;
 
-use App\Models\Hook;
+use App\Domain\Hook\models\Hook;
 use Exception;
 use Lorisleiva\Actions\Concerns\AsAction;
-use Src\core\hook\HookProcessor;
+use App\Domain\Hook\HookProcessor;
 
-class SendHookComponentToPageAction
+class ExecuteHook
 {
     use AsAction;
 
@@ -16,7 +16,7 @@ class SendHookComponentToPageAction
      */
     public function handle(): array
     {
-        $hook = Hook::where('name', '=', 'module.multipass-testing-module.hook.component')
+        $hook = Hook::where('name', '=', 'module.multipass-testing-module.hook.Component')
             ->first();
 
         return (new HookProcessor(collect([$hook])))->process();

@@ -4,7 +4,7 @@ namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
 use AlexisVS\MultipassTestingModule\Models\Entity;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Src\core\module\ModuleFactory;
+use App\Domain\Module\ModuleFactory;
 
 /**
  * @extends Factory<Entity>

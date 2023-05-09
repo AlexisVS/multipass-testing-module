@@ -2,7 +2,7 @@
 
 namespace AlexisVS\MultipassTestingModule\Actions;
 
-use App\Models\Hook;
+use App\Domain\Hook\models\Hook;
 use Inertia\Response;
 use Lorisleiva\Actions\Concerns\AsAction;
 

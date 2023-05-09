@@ -2,7 +2,7 @@
 
 namespace AlexisVS\MultipassTestingModule\Models;
 
-use Src\core\module\models\ModuleModel;
+use App\Domain\Module\ModuleModel;
 
 class Entity extends ModuleModel
 {
