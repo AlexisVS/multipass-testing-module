@@ -2,7 +2,7 @@
     <GuestLayout>
         <div>
             <h2>Hook.vue </h2>
-            <Link href="/module/multipass-testing-module/hook/trigger">Trigger</Link>
+            <Link :href="route('module.multipass-testing-module.hook.trigger')">Trigger</Link>
         </div>
     </GuestLayout>
 </template>
