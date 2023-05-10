@@ -21,6 +21,7 @@ class ExecuteHook
         $data = [];
 
         (new HookProcessor($hooks, $data))->process();
+
         return $data;
     }
 }

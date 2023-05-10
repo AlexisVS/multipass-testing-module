@@ -4,7 +4,6 @@ namespace AlexisVS\MultipassTestingModule\Http\Controllers;
 
 use AlexisVS\MultipassTestingModule\Models\Entity;
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class EntityController extends Controller
