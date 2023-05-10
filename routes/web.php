@@ -2,8 +2,8 @@
 
 use AlexisVS\MultipassTestingModule\Http\Controllers\EntityController;
 use AlexisVS\MultipassTestingModule\Http\Controllers\HookController;
+use App\Domain\Domain\Enums\DashboardPermissionsEnum;
 use App\Domain\Module\Models\Module;
-use App\Domain\Permissions\Enums\DashboardPermissionsEnum;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 

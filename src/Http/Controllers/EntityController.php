@@ -12,7 +12,7 @@ class EntityController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Collection
+    public function index(): string
     {
         return Entity::all();
     }
