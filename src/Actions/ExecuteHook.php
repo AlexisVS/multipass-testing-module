@@ -2,10 +2,10 @@
 
 namespace AlexisVS\MultipassTestingModule\Actions;
 
+use App\Domain\Hook\HookProcessor;
 use App\Domain\Hook\Models\Hook;
 use Exception;
 use Lorisleiva\Actions\Concerns\AsAction;
-use App\Domain\Hook\HookProcessor;
 
 class ExecuteHook
 {

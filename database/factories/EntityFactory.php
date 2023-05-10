@@ -3,8 +3,8 @@
 namespace AlexisVS\MultipassTestingModule\Database\Factories;
 
 use AlexisVS\MultipassTestingModule\Models\Entity;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Domain\Module\ModuleFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends Factory<Entity>
