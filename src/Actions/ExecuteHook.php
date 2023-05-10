@@ -16,9 +16,11 @@ class ExecuteHook
      */
     public function handle(): array
     {
-        $hook = Hook::where('name', '=', 'module.multipass-testing-module.hook.Component')
-            ->first();
+        $hooks = Hook::where('name', '=', 'module.multipass-testing-module.hook.Component')->get();
 
-        return (new HookProcessor(collect([$hook])))->process();
+        $data = [];
+
+        (new HookProcessor($hooks, $data))->process();
+        return $data;
     }
 }
