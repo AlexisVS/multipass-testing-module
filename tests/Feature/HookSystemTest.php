@@ -6,7 +6,6 @@ it('can access to the module hook Component page', function () {
     /** @var TestResponse $request */
     $request = $this->get('module/multipass-testing-module/hook');
 
-
     $request->assertOk();
 });
 

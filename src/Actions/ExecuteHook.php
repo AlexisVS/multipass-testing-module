@@ -5,7 +5,6 @@ namespace AlexisVS\MultipassTestingModule\Actions;
 use App\Domain\Hook\HookProcessor;
 use App\Domain\Hook\Models\Hook;
 use Exception;
-use Illuminate\Http\Request;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class ExecuteHook
