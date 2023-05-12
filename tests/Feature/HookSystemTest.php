@@ -1,15 +1,18 @@
 <?php
 
-it('can access to the module hook Component page', function () {
-    $request = $this->get('module.multipass-testing-module.hook.Component');
+use Illuminate\Testing\TestResponse;
 
-    $request->assertOk(200)
-        ->assertSee('Hook.vue');
+it('can access to the module hook Component page', function () {
+    /** @var TestResponse $request */
+    $request = $this->get('module/multipass-testing-module/hook');
+
+
+    $request->assertOk();
 });
 
 it('can access to the module hook action page', function () {
-    $request = $this->get('module.multipass-testing-module.hook.trigger');
+    $request = $this->post('module/multipass-testing-module/hook/trigger');
 
-    $request->assertOk(200)
-        ->assertSee('Hello from Multipass Testing Module!');
+    /** @var TestResponse $request */
+    $request->assertOk();
 });

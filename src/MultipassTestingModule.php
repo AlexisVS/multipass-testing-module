@@ -7,6 +7,7 @@ use App\Domain\Component\Enums\ComponentDataTypeEnum;
 use App\Domain\Hook\Models\Hook;
 use App\Domain\Module\Modules\BaseModuleClass;
 use App\Domain\User\Models\User;
+use Exception;
 
 class MultipassTestingModule extends BaseModuleClass
 {
@@ -24,13 +25,19 @@ class MultipassTestingModule extends BaseModuleClass
 
     public string $vendor_path = 'alexisvs/multipass-testing-module';
 
+    /**
+     * @throws Exception
+     */
     public function installVueComponents(): void
     {
         // TODO: C'est comme ça qu'on enregistre le query et qu'on l'appelle
         $modelPropsSql = 'App\Domain\User\Models\User::all()';
 
-        $hook = Hook::where('name', '=', 'module.multipass-testing-module.hook.Component')
-            ->first();
+        $hook = Hook::firstOrCreate([
+            'name' => 'module.multipass-testing-module.hook.component',
+            'description' => 'Test the hook module system inside the testing module',
+            'hook_category_id' => 1,
+        ]);
 
         ComponentBuilder::build('TestComponent', $hook, $this->name)
             ->hasData('testSimpleProps', 'testSimpleProps', ComponentDataTypeEnum::Simple->value)

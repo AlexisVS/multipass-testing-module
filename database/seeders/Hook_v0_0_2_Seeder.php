@@ -9,8 +9,8 @@ class HookV002Seeder extends Seeder
 {
     public function run(): void
     {
-        Hook::create([
-            'name' => 'module.multipass-testing-module.hook.Component',
+        Hook::factory()->create([
+            'name' => 'module.multipass-testing-module.hook.component',
             'description' => 'Test the hook module system inside the testing module',
             'hook_category_id' => 1,
         ]);

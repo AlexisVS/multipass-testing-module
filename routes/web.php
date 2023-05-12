@@ -27,8 +27,8 @@ Route::name('module.'.$module->name.'.')
 
         Route::resource('/entity', EntityController::class)->except(['create', 'edit']);
 
-        Route::get('/hook', [HookController::class, 'index'])->name('hook.Component');
-        Route::get('/hook/trigger', [HookController::class, 'trigger'])->name('hook.trigger');
+        Route::get('/hook', [HookController::class, 'index'])->name('hook.component');
+        Route::post('/hook/trigger', [HookController::class, 'trigger'])->name('hook.trigger');
     });
 
 // BACK
