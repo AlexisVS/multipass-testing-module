@@ -72,7 +72,7 @@ jobs:
           EOF
 
       - name: Update Composer modules
-        run: composer config repositories.$GITHUB_REPO_NAME vcs https://github.com/${{ github.repository }}
+        run: composer config repositories.${{ env.GITHUB_REPO_NAME }} vcs https://github.com/${{ github.repository }}
 
       - name: Check Environment
         env:
