@@ -95,9 +95,6 @@ jobs:
           composer run test
 
       - name: Test module
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ${{ github.workspace }}/database/database.sqlite
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
