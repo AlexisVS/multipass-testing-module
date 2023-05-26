@@ -75,7 +75,7 @@ jobs:
             }
           ],
             "require": {
-              "${{ steps.lower-case-github-user.outputs.lowercase }}/${{ env.github.event.repository.name }}": "dev-main"
+              "${{ steps.lower-case-github-user.outputs.lowercase }}/${{ github.event.repository.name }}": "dev-main"
             }
           }
           EOF
