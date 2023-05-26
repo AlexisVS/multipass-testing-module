@@ -105,4 +105,8 @@ jobs:
           DB_DATABASE: ./database/database.sqlite
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
-          composer run test
+          php ./vendor/bin/testbench route:clear --ansi
+          php ./vendor/bin/testbench config:clear --ansi
+          php ../../../artisan optimize:clear --ansi
+          php ../../../artisan config:cache --ansi
+          php ./vendor/bin/pest
