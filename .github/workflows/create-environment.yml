@@ -33,7 +33,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+        run: ls -al ./ && composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
       - name: Generate key
         run: php artisan key:generate
