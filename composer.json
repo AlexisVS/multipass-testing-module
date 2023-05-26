@@ -74,6 +74,7 @@
             "@php ./vendor/bin/testbench route:clear --ansi",
             "@php ./vendor/bin/testbench config:clear --ansi",
             "@php ../../../artisan optimize:clear --ansi",
+            "@php ../../../artisan config:cache --ansi",
             "@php ./vendor/bin/pest"
         ],
         "test-coverage": "vendor/bin/pest --coverage",

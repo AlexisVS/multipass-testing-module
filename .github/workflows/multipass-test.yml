@@ -92,7 +92,6 @@ jobs:
           DB_DATABASE: ./database/database.sqlite
         run: |
           php artisan migrate:fresh --seed
-          php artisan optimize:clear
           composer run test
 
       - name: Test module
