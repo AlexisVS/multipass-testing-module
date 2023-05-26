@@ -37,6 +37,9 @@ jobs:
           ref: main
           token: ${{ secrets.PAT }}
 
+      - name: Copy .env
+        run: cp .env.testing .env
+
       - name: Install Composer dependencies
         run: |
           cp composer.modules.json.blank composer.modules.json
