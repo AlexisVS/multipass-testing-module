@@ -1,8 +1,7 @@
 name: Create Environment
 
 on:
-  push:
-    branches: [ main ]
+  workflow_call:
 
 jobs:
   build-and-create-environment:
