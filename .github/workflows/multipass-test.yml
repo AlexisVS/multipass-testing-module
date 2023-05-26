@@ -109,4 +109,5 @@ jobs:
           php ./vendor/bin/testbench config:clear --ansi
           php ../../../artisan optimize:clear --ansi
           php ../../../artisan config:cache --ansi
+          php ./vendor/bin/testbench config:cache --ansi
           php ./vendor/bin/pest
