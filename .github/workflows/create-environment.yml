@@ -16,7 +16,6 @@ jobs:
         uses: ASzc/change-string-case-action@v5
         with:
           string: ${{ env.GITHUB_USER }}
-          case: lower
 
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
@@ -75,7 +74,7 @@ jobs:
             }
           ],
             "require": {
-              "${{ steps.lower-case-github-user.outputs.lowercase }}/${{ github.event.repository.name }}": "dev-main"
+              "${{ steps.lower-case_github_user.outputs.lowercase }}/${{ github.event.repository.name }}": "dev-main"
             }
           }
           EOF
