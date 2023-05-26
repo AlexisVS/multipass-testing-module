@@ -21,6 +21,12 @@ jobs:
         with:
           php-version: '8.2'
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts'
+          check-latest: true
+
       - name: Configure credentials
         run: |
           git config --global user.name "AlexisVS"
