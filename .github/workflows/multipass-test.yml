@@ -94,7 +94,7 @@ jobs:
           php artisan migrate:fresh --seed
           composer run test
 
-      - name: Install composer dependencies
+      - name: Install dependencies
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
@@ -103,5 +103,4 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ./database/database.sqlite
-        run: |
-          composer run test
+        run: composer run test
