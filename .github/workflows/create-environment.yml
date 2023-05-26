@@ -75,7 +75,7 @@ jobs:
           EOF
 
       - name: Update Composer modules
-        run: composer update --no-ansi --no-interaction --no-progress
+        run: cat composer.modules.json && composer update --no-ansi --no-interaction --no-progress
 
       - name: Check Environment
         env:
