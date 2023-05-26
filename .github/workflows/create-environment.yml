@@ -64,7 +64,7 @@ jobs:
             "repositories": [
             {
               "type": "vcs",
-              "url": "https://github.com/${{ github.repository }}"
+              "url": "https://github.com/${{ github.repository }}.git"
             }
           ],
             "require": {
@@ -74,7 +74,7 @@ jobs:
           EOF
 
       - name: Update Composer modules
-        run: composer config repositories.${{ env.GITHUB_REPO_NAME }} vcs https://github.com/${{ github.repository }}.git
+        run: composer update --prefer-dist --no-ansi --no-interaction --no-progress
 
       - name: Check Environment
         env:
