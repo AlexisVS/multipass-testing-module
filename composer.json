@@ -92,8 +92,7 @@
             "dont-discover": [
                 "spatie/laravel-medialibrary",
                 "barryvdh/laravel-ide-helper",
-                "barryvdh/laravel-debugbar",
-                "laravel/dusk"
+                "barryvdh/laravel-debugbar"
             ],
             "providers": [
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"

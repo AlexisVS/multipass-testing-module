@@ -89,9 +89,6 @@ jobs:
       - name: Update Composer modules
         run: composer update --no-ansi --no-interaction --no-progress
 
-      - name: Optimize Composer autoloader
-        run: composer dump-autoload --optimize --no-dev --classmap-authoritative
-
       - name: Artisan optimize
         run: php artisan optimize --ansi
 
