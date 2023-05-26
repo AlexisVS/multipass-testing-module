@@ -89,9 +89,10 @@ jobs:
       - name: Check Environment
         env:
           DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
+          DB_DATABASE: ./database/database.sqlite
         run: |
           php artisan migrate:fresh --seed
+          php artisan optimize:clear
           composer run test
 
       - name: Test module
