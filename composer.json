@@ -90,7 +90,9 @@
     "extra": {
         "laravel": {
             "dont-discover": [
-                "spatie/laravel-medialibrary"
+                "spatie/laravel-medialibrary",
+                "barryvdh/laravel-ide-helper",
+                "barryvdh/laravel-debugbar"
             ],
             "providers": [
                 "AlexisVS\\MultipassTestingModule\\MultipassTestingModuleServiceProvider"
