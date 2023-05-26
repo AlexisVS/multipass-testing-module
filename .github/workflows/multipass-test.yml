@@ -11,6 +11,17 @@ env:
 jobs:
   testing:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_USER: sail
+          MYSQL_DATABASE: testing
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -57,11 +68,6 @@ jobs:
       - name: Clear cache
         run: php artisan cache:clear
 
-      - name: Create Database
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-
       - name: Build assets
         run: npm install && npm run build
 
@@ -90,9 +96,6 @@ jobs:
         run: cat composer.modules.json && composer update --no-ansi --no-interaction --no-progress
 
       - name: Check Environment
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ./database/database.sqlite
         run: |
           php artisan migrate:fresh --seed
           composer run test
@@ -103,9 +106,6 @@ jobs:
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
       - name: Test module
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ./database/database.sqlite
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi

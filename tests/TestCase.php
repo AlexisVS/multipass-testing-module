@@ -19,7 +19,7 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app): void
     {
-        config()->set('database.default', 'sqlite');
+        config()->set('database.default', 'testing');
     }
 
     protected function getPackageProviders($app): array
