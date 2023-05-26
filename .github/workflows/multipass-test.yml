@@ -12,12 +12,11 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        uses:
-
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Create environment
-        uses: .github/workflows/create-environment.yml
+        uses: .github/actions/create-environment.yml
 
       - name: Test module
         env:

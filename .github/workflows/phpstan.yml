@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - uses: ./.github/workflows/create-environment.yml
+      - uses: ./.github/actions/create-environment.yml
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
