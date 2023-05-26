@@ -9,10 +9,13 @@ env:
   GITHUB_USER: ${{ github.repository_owner }}
 
 jobs:
-  build-and-test:
+  testing:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Create Environment
         uses: ./.github/workflows/create-environment.yml
 
