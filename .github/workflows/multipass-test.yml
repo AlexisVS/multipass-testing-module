@@ -103,4 +103,6 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ./database/database.sqlite
-        run: composer run test
+        run: |
+          cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
+          composer run test
