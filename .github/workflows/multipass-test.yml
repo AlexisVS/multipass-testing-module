@@ -94,7 +94,7 @@ jobs:
           php artisan migrate:fresh --seed
           composer run test
 
-      - name: Install dependencies
+      - name: Install module dependencies
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
