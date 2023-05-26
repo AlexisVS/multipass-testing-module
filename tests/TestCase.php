@@ -3,6 +3,7 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
+use Illuminate\Contracts\Config\Repository;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -17,9 +18,22 @@ class TestCase extends Orchestra
      */
     protected $loadEnvironmentVariables = true;
 
-    public function getEnvironmentSetUp($app): void
+//    public function getEnvironmentSetUp($app): void
+//    {
+//        config()->set('database.default', 'testing');
+//    }
+
+    protected function defineEnvironment($app)
     {
-        config()->set('database.default', 'testing');
+        // Setup default database to use sqlite :memory:
+        tap($app->make('config'), function (Repository $config) {
+            $config->set('database.default', 'testbench');
+            $config->set('database.connections.testbench', [
+                'driver' => 'sqlite',
+                'database' => ':memory:',
+                'prefix' => '',
+            ]);
+        });
     }
 
     protected function getPackageProviders($app): array
@@ -31,11 +45,11 @@ class TestCase extends Orchestra
 
     public static function applicationBasePath(): string
     {
-        return __DIR__.'/../../../../';
+        return __DIR__ . '/../../../../';
     }
 
     protected function getBasePath(): string
     {
-        return __DIR__.'/../../../../';
+        return __DIR__ . '/../../../../';
     }
 }
