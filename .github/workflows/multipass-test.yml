@@ -92,7 +92,7 @@ jobs:
           DB_DATABASE: database/database.sqlite
         run: |
           php artisan migrate:fresh --seed
-          php artisan test
+          composer run test
 
       - name: Test module
         env:
@@ -101,4 +101,4 @@ jobs:
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
-          vendor/bin/pest
+          composer run test
