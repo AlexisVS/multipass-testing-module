@@ -23,7 +23,7 @@ class TestCase extends Orchestra
 //        config()->set('database.default', 'testing');
 //    }
 
-    protected function defineEnvironment($app)
+    protected function defineEnvironment($app): void
     {
         // Setup default database to use sqlite :memory:
         tap($app->make('config'), function (Repository $config) {
