@@ -12,7 +12,6 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
 3. Have fun creating your package.
 ---
-<!--/delete-->
 
 ## Installation
 

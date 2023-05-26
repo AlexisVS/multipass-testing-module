@@ -30,14 +30,14 @@ class MultipassTestingModule extends BaseModuleClass
      */
     public function installVueComponents(): void
     {
-        // TODO: C'est comme ça qu'on enregistre le query et qu'on l'appelle
-        $modelPropsSql = 'App\Domain\User\Models\User::all()';
-
         $hook = Hook::firstOrCreate([
             'name' => 'module.multipass-testing-module.hook.component',
             'description' => 'Test the hook module system inside the testing module',
             'hook_category_id' => 1,
         ]);
+
+        // TODO: C'est comme ça qu'on enregistre le query et qu'on l'appelle
+        $modelPropsSql = 'App\Domain\User\Models\User::all()';
 
         ComponentBuilder::build('TestComponent', $hook, $this->name)
             ->hasData('testSimpleProps', 'testSimpleProps', ComponentDataTypeEnum::Simple->value)

@@ -1,5 +1,7 @@
 <?php
 
+namespace AlexisVS\MultipassTestingModule\Tests\Feature;
+
 use AlexisVS\MultipassTestingModule\Models\Entity;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;

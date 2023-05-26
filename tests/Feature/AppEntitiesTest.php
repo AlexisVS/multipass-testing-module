@@ -1,5 +1,7 @@
 <?php
 
+namespace AlexisVS\MultipassTestingModule\Tests\Feature;
+
 use App\Domain\User\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 
