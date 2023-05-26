@@ -2,9 +2,8 @@ name: Create Environment
 description: Create an environment for testing
 
 runs:
-  using: "composite"
   steps:
-    - run: Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - id: lower-case_github_user
@@ -12,7 +11,7 @@ runs:
       with:
         string: ${{ github.actor }}
 
-    - run: Setup PHP
+    - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
@@ -22,7 +21,7 @@ runs:
         git config --global user.name "AlexisVS"
         composer config --global github-oauth.github.com ${{ secrets.PAT }}
 
-    - run: Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
       with:
         repository: 'AlexisVS/multipass'
