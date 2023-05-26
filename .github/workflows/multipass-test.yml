@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create environment
-        uses: .github/actions/create-environment.yml
+        uses: ./.github/actions/create-environment.yml
 
       - name: Test module
         env:
