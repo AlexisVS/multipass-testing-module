@@ -56,7 +56,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Copy .env
-        run: cp .env.testing .env
+        run: cp .env.example .env
 
       - name: Directory and Permissions
         run: |
@@ -71,26 +71,6 @@ jobs:
 
       - name: Generate key
         run: php artisan key:generate
-
-
-
-
-      - name: Ping MySQL container
-        run: ping -c 5 ${{ steps.mysql_ip.outputs.stdout }}
-
-      - name: Check DNS resolution
-        run: nslookup ${{ steps.mysql_ip.outputs.stdout }}
-
-      - name: Test database connection
-        env:
-          DB_HOST: ${{ steps.mysql_ip.outputs.stdout }}
-        run: php artisan migrate --env=testing --no-interaction --force
-
-
-
-
-      - name: Clear cache
-        run: php artisan cache:clear
 
       - id: lower-case-github-repository
         uses: ASzc/change-string-case-action@v5
