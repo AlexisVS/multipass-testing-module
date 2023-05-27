@@ -3,6 +3,7 @@
 namespace AlexisVS\MultipassTestingModule\Tests;
 
 use AlexisVS\MultipassTestingModule\MultipassTestingModuleServiceProvider;
+use App;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
