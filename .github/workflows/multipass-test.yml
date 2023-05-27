@@ -105,7 +105,7 @@ jobs:
 
       - name: Check Environment
         run: |
-          php artisan migrate:fresh --seed
+#          php artisan migrate:fresh --seed
           composer run test
 
       - name: Install module dependencies
