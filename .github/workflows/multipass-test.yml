@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:8
         env:
           MYSQL_ROOT_PASSWORD: ""
-          ALLOW_EMPTY_PASSWORD: "yes"
-          MYSQL_DATABASE: "testing"
-          MYSQL_USER: "sail"
-          MYSQL_PASSWORD: "password"
+          ALLOW_EMPTY_PASSWORD: true
+          MYSQL_DATABASE: testing
+          MYSQL_USER: sail
+          MYSQL_PASSWORD: password
+        ports:
+          - 3306:3306
 
     steps:
       - name: Checkout code
@@ -34,6 +36,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          extensions: mbstring, zip, pcntl, exif, gd, pdo_mysql, pdo_sqlite, tokenizer, bcmath, xml, curl, fileinfo, json, intl, mysqli, sqlite3, sockets, opcache, simplexml, xmlwriter, xmlreader, xdebug
 
       - name: Configure credentials
         run: |
@@ -50,6 +53,12 @@ jobs:
       - name: Copy .env
         run: cp .env.testing .env
 
+      - name: Directory and Permissions
+        run: |
+          mkdir -p storage/framework/{sessions,views,cache}
+          mkdir -p bootstrap/cache
+          chmod -R 777 storage bootstrap/cache
+
       - name: Install Composer dependencies
         run: |
           cp composer.modules.json.blank composer.modules.json
@@ -57,12 +66,6 @@ jobs:
 
       - name: Generate key
         run: php artisan key:generate
-
-      - name: Directory and Permissions
-        run: |
-          mkdir -p storage/framework/{sessions,views,cache}
-          mkdir -p bootstrap/cache
-          chmod -R 777 storage bootstrap/cache
 
       - name: Clear cache
         run: php artisan cache:clear
