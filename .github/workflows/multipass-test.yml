@@ -7,7 +7,6 @@ on:
 env:
   GITHUB_REPO_NAME: ${{ github.event.repository.name }}
   GITHUB_USER: ${{ github.repository_owner }}
-  DB_HOST: ${{ steps.mysql_ip.outputs.stdout }}
 
 jobs:
   testing:
