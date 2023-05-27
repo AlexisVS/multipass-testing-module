@@ -91,10 +91,16 @@ jobs:
       - name: Update Composer modules
         run: composer update --no-ansi --no-interaction --no-progress
 
+      - name: optimize before build
+        run: |
+          php artisan optimize:clear
+          php artisan optimize
+          php artisan ziggy:generate
+
       - name: Build assets
         run: npm install && npm run build
 
-      - name: optimize
+      - name: optimize after build
         run: |
           php artisan optimize:clear
           php artisan optimize
