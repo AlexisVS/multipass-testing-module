@@ -67,11 +67,6 @@ jobs:
       - name: Clear cache
         run: php artisan cache:clear
 
-      - name: Create Database
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-
       - id: lower-case-github-repository
         uses: ASzc/change-string-case-action@v5
         with:
@@ -94,7 +89,7 @@ jobs:
           EOF
 
       - name: Update Composer modules
-        run: cat composer.modules.json && composer update --no-ansi --no-interaction --no-progress
+        run: composer update --no-ansi --no-interaction --no-progress
 
       - name: Build assets
         run: npm install && npm run build
@@ -106,9 +101,6 @@ jobs:
           php artisan ziggy:generate
 
       - name: Check Environment
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ./database/database.sqlite
         run: composer run test
 
       - name: Run PHPStan
