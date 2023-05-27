@@ -11,6 +11,15 @@ jobs:
   phpstan:
     name: phpstan
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ""
+          ALLOW_EMPTY_PASSWORD: "yes"
+          MYSQL_DATABASE: "testing"
+          MYSQL_USER: "sail"
+          MYSQL_PASSWORD: "password"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
