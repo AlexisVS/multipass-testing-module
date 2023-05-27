@@ -109,7 +109,7 @@ jobs:
 
       - name: Check Environment
         run: |
-          composer run test
+          php artisan test
 
       - name: Install module dependencies
         run: |
