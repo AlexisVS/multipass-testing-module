@@ -70,14 +70,14 @@ jobs:
 
 
 
-      - name: Test database connection
-        run: php artisan migrate --database=mysql --env=testing --no-interaction --force
-
       - name: Ping MySQL container
         run: ping -c 5 mysql
 
       - name: Check DNS resolution
         run: nslookup mysql
+
+      - name: Test database connection
+        run: php artisan migrate --database=mysql --env=testing --no-interaction --force
 
 
 
