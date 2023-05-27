@@ -108,8 +108,11 @@ jobs:
           php artisan ziggy:generate
 
       - name: Check Environment
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
         run: |
-          php artisan test
+          ./vendor/bin/phpunit
 
       - name: Install module dependencies
         run: |
@@ -117,6 +120,9 @@ jobs:
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
       - name: Test module
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi
