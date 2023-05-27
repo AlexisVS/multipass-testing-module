@@ -16,7 +16,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: ""
-          ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_DATABASE: testing
           MYSQL_USER: sail
           MYSQL_PASSWORD: password
