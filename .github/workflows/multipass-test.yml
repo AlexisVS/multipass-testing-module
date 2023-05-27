@@ -112,6 +112,7 @@ jobs:
       - name: Test module
         env:
           DB_CONNECTION: sqlite
+          DB_DATABASE: ':memory:'
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi
