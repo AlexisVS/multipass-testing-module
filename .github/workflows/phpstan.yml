@@ -38,7 +38,6 @@ jobs:
           php-version: '8.2'
           extensions: mbstring, zip, pcntl, exif, gd, pdo_mysql, pdo_sqlite, tokenizer, bcmath, xml, curl, fileinfo, json, intl, mysqli, sqlite3, sockets, opcache, simplexml, xmlwriter, xmlreader, xdebug
 
-
       - name: Configure credentials
         run: |
           git config --global user.name "AlexisVS"
@@ -73,9 +72,6 @@ jobs:
           mkdir -p database
           touch database/database.sqlite
 
-      - name: Build assets
-        run: npm install && npm run build
-
       - id: lower-case-github-repository
         uses: ASzc/change-string-case-action@v5
         with:
@@ -99,6 +95,15 @@ jobs:
 
       - name: Update Composer modules
         run: cat composer.modules.json && composer update --no-ansi --no-interaction --no-progress
+
+      - name: Build assets
+        run: npm install && npm run build
+
+      - name: optimize
+        run: |
+          php artisan optimize:clear
+          php artisan optimize
+          php artisan ziggy:generate
 
       - name: Check Environment
         env:

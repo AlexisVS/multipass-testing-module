@@ -75,9 +75,6 @@ jobs:
           mkdir -p database
           touch database/database.sqlite
 
-      - name: Build assets
-        run: npm install && npm run build
-
       - id: lower-case-github-repository
         uses: ASzc/change-string-case-action@v5
         with:
@@ -102,8 +99,14 @@ jobs:
       - name: Update Composer modules
         run: composer update --no-ansi --no-interaction --no-progress
 
-      - name: Artisan optimize
-        run: php artisan optimize --ansi
+      - name: Build assets
+        run: npm install && npm run build
+
+      - name: optimize
+        run: |
+          php artisan optimize:clear
+          php artisan optimize
+          php artisan ziggy:generate
 
       - name: Check Environment
         env:
