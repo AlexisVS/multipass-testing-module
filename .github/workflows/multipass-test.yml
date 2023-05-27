@@ -67,6 +67,9 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
+      - name: Test database connection
+        run: php artisan migrate --database=mysql --env=testing --no-interaction --force
+
       - name: Clear cache
         run: php artisan cache:clear
 
