@@ -99,8 +99,7 @@ jobs:
           php artisan ziggy:generate
 
       - name: Check Environment
-        run: |
-          ./vendor/bin/phpunit
+        run: ./vendor/bin/phpunit
 
       - name: Install module dependencies
         run: |

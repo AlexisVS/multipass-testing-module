@@ -11,17 +11,6 @@ jobs:
   phpstan:
     name: phpstan
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: ""
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_DATABASE: testing
-          MYSQL_USER: sail
-          MYSQL_PASSWORD: password
-        ports:
-          - 3306:3306
 
     steps:
       - name: Checkout code
@@ -50,6 +39,11 @@ jobs:
           ref: main
           token: ${{ secrets.PAT }}
 
+      - name: Prepare environment
+        run: |
+          cp .env.ci .env
+          touch database/database.sqlite
+
       - name: Directory and Permissions
         run: |
           mkdir -p storage/framework/{sessions,views,cache}
@@ -64,8 +58,8 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
-      - name: Clear cache
-        run: php artisan cache:clear
+      - name: Create database
+        run: php artisan migrate:fresh --seed
 
       - id: lower-case-github-repository
         uses: ASzc/change-string-case-action@v5
@@ -91,17 +85,21 @@ jobs:
       - name: Update Composer modules
         run: composer update --no-ansi --no-interaction --no-progress
 
+      - name: optimize before build
+        run: |
+          php artisan optimize:clear
+          php artisan ziggy:generate
+
       - name: Build assets
         run: npm install && npm run build
 
-      - name: optimize
+      - name: optimize after build
         run: |
           php artisan optimize:clear
-          php artisan optimize
           php artisan ziggy:generate
 
       - name: Check Environment
-        run: composer run test
+        run: ./vendor/bin/phpunit
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
