@@ -11,21 +11,17 @@ env:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8
-        env:
-          MYSQL_ROOT_PASSWORD: ""
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_DATABASE: testing
-          MYSQL_USER: sail
-          MYSQL_PASSWORD: password
-        ports:
-          - '3306'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql version: '8.0'
+          mysql database: 'testing'
+          mysql user: 'sail'
+          mysql password: 'password'
 
       - id: lower-case_github_user
         uses: ASzc/change-string-case-action@v5
@@ -107,6 +103,11 @@ jobs:
           php artisan ziggy:generate
 
       - name: Check Environment
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: testing
+          DB_DATABASE: testing
+          DB_HOST: localhost
         run: |
           composer run test
 
@@ -116,6 +117,11 @@ jobs:
           composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
       - name: Test module
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: testing
+          DB_DATABASE: testing
+          DB_HOST: localhost
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi
