@@ -45,6 +45,7 @@ jobs:
           touch database/database.sqlite
           php artisan migrate --force
 
+
       - name: Directory and Permissions
         run: |
           mkdir -p storage/framework/{sessions,views,cache}
