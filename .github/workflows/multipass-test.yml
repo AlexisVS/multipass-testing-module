@@ -27,11 +27,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Get MySQL container IP address
-        run: docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql
-        id: mysql_ip
-
-
       - id: lower-case_github_user
         uses: ASzc/change-string-case-action@v5
         with:
