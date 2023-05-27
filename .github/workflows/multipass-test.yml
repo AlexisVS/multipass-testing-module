@@ -21,7 +21,7 @@ jobs:
           MYSQL_USER: sail
           MYSQL_PASSWORD: password
         ports:
-          - 3306:3306
+          - '3306:3306'
 
     steps:
       - name: Checkout code
@@ -67,8 +67,20 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
+
+
+
       - name: Test database connection
         run: php artisan migrate --database=mysql --env=testing --no-interaction --force
+
+      - name: Ping MySQL container
+        run: ping -c 5 mysql
+
+      - name: Check DNS resolution
+        run: nslookup mysql
+
+
+
 
       - name: Clear cache
         run: php artisan cache:clear
