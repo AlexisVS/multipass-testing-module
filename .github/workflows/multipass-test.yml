@@ -116,5 +116,4 @@ jobs:
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi
           php ./vendor/bin/testbench config:clear --ansi
-          php ./vendor/bin/testbench config:cache --ansi
           php ./vendor/bin/pest
