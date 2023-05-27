@@ -7,6 +7,7 @@ on:
 env:
   GITHUB_REPO_NAME: ${{ github.event.repository.name }}
   GITHUB_USER: ${{ github.repository_owner }}
+  DB_HOST: ${{ steps.mysql_ip.outputs.stdout }}
 
 jobs:
   testing:
@@ -26,6 +27,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Get MySQL container IP address
+        run: docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql
+        id: mysql_ip
+
 
       - id: lower-case_github_user
         uses: ASzc/change-string-case-action@v5
@@ -71,13 +77,15 @@ jobs:
 
 
       - name: Ping MySQL container
-        run: ping -c 5 mysql
+        run: ping -c 5 ${{ steps.mysql_ip.outputs.stdout }}
 
       - name: Check DNS resolution
-        run: nslookup mysql
+        run: nslookup ${{ steps.mysql_ip.outputs.stdout }}
 
       - name: Test database connection
-        run: php artisan migrate --database=mysql --env=testing --no-interaction --force
+        env:
+          DB_HOST: ${{ steps.mysql_ip.outputs.stdout }}
+        run: php artisan migrate --env=testing --no-interaction --force
 
 
 
