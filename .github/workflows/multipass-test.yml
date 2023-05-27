@@ -25,6 +25,7 @@ jobs:
           mysql database: 'testing'
           mysql user: 'sail'
           mysql password: 'password'
+          mysql root password: 'password'
 
       - id: lower-case_github_user
         uses: ASzc/change-string-case-action@v5
