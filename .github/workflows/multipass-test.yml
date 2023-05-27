@@ -12,17 +12,6 @@ jobs:
   testing:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: testing
-          MYSQL_USER: sail
-          MYSQL_PASSWORD: password
-        ports:
-          - 3306:3306
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -51,7 +40,10 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Prepare environment
-        run: cp .env.ci .env
+        run: |
+          cp .env.ci .env
+          touch database/database.sqlite
+          php artisan migrate --force
 
       - name: Directory and Permissions
         run: |
