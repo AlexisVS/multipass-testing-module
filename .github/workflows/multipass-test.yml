@@ -112,12 +112,9 @@ jobs:
       - name: Test module
         env:
           DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
         run: |
           cd ./vendor/${{ steps.lower-case_github_user.outputs.lowercase }}/${{ env.GITHUB_REPO_NAME }}
           php ./vendor/bin/testbench route:clear --ansi
           php ./vendor/bin/testbench config:clear --ansi
-          php ../../../artisan optimize:clear --ansi
-          php ../../../artisan optimize --ansi
           php ./vendor/bin/testbench config:cache --ansi
           php ./vendor/bin/pest
