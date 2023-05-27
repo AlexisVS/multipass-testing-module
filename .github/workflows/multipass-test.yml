@@ -88,8 +88,6 @@ jobs:
       - name: optimize before build
         run: |
           php artisan optimize:clear
-          php artisan config:cache
-          php artisan route:cache
           php artisan ziggy:generate
 
       - name: Build assets
@@ -98,7 +96,6 @@ jobs:
       - name: optimize after build
         run: |
           php artisan optimize:clear
-          php artisan optimize
           php artisan ziggy:generate
 
       - name: Check Environment
