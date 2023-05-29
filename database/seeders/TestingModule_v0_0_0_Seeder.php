@@ -2,7 +2,7 @@
 
 namespace AlexisVS\MultipassTestingModule\Database\Seeders;
 
-use AlexisVS\MultipassTestingModule\Database\Factories\TestingModuleFactory;
+use AlexisVS\MultipassTestingModule\Models\TestingModule;
 use Illuminate\Database\Seeder;
 
 class TestingModuleV000Seeder extends Seeder
@@ -12,7 +12,6 @@ class TestingModuleV000Seeder extends Seeder
      */
     public function run(): void
     {
-        (new TestingModuleFactory())->count(3)->create();
-        TestingModuleFactory::new()->count(3)->create();
+        TestingModule::factory()->count(10)->create();
     }
 }

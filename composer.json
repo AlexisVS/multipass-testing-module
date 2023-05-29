@@ -52,17 +52,16 @@
             "Database\\Factories\\": "../../../database/factories/",
             "Database\\Migrations\\": "../../../database/migrations/",
             "Database\\Seeders\\\\": "../../../database/seeders/",
-            "AlexisVS\\MultipassTestingModule\\": "./src/",
-            "AlexisVS\\MultipassTestingModule\\Http\\": "./src/Http/",
-            "AlexisVS\\MultipassTestingModule\\Http\\Controllers\\": "./src/Http/Controllers/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "./database/factories/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "./database/migrations/",
-            "AlexisVS\\MultipassTestingModule\\Tests\\": "./tests/"
+            "AlexisVS\\MultipassTestingModule\\": "src/",
+            "AlexisVS\\MultipassTestingModule\\Http\\": "src/Http/",
+            "AlexisVS\\MultipassTestingModule\\Http\\Controllers\\": "src/Http/Controllers/",
+            "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
+            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AlexisVS\\MultipassTestingModule\\Tests\\": "./tests/"
+            "AlexisVS\\MultipassTestingModule\\Tests\\": "tests/"
         }
     },
     "scripts": {
