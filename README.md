@@ -18,7 +18,7 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 You can install the package via composer:
 
 ```bash
-composer require AlexisVS/multipass-testing-module
+composer require alexisvs/multipass-testing-module
 ```
 
 You can publish and run the migrations with:
@@ -50,8 +50,8 @@ php artisan vendor:publish --tag="multipass-testing-module-views"
 ## Usage
 
 ```php
-$testing = new AlexisVS\MultipassTestingModule();
-echo $testing->echoPhrase('Hello, AlexisVS!');
+$multipassTestingModule = new AlexisVS\MultipassTestingModule();
+echo $multipassTestingModule->echoPhrase('Hello, AlexisVS!');
 ```
 
 ## Testing

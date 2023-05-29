@@ -51,7 +51,7 @@
             "App\\": "../../../app/",
             "Database\\Factories\\": "../../../database/factories/",
             "Database\\Migrations\\": "../../../database/migrations/",
-            "Database\\Seeders\\\\": "../../../database/seeders/",
+            "Database\\Seeders\\": "../../../database/seeders/",
             "AlexisVS\\MultipassTestingModule\\": "src/",
             "AlexisVS\\MultipassTestingModule\\Http\\": "src/Http/",
             "AlexisVS\\MultipassTestingModule\\Http\\Controllers\\": "src/Http/Controllers/",

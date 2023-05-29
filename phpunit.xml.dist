@@ -14,7 +14,7 @@
          cacheDirectory=".phpunit.cache"
          backupStaticProperties="false">
     <testsuites>
-        <testsuite name="VendorName Test Suite">
+        <testsuite name="AlexisVS Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
