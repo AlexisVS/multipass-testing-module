@@ -1,7 +1,7 @@
 {
     "name": "alexisvs/multipass-testing-module",
     "description": "This is my package for testing in one place all of multipass module features",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": [
         "AlexisVS",
         "laravel",

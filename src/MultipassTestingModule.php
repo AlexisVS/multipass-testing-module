@@ -17,7 +17,7 @@ class MultipassTestingModule extends BaseModuleClass
 
     public string $author = 'AlexisVS';
 
-    public string $version = '1.0.2';
+    public string $version = '1.0.3';
 
     public string $namespace = 'AlexisVS\MultipassTestingModule';
 
