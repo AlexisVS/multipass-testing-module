@@ -84,6 +84,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
+        },
+        "github-oauth": {
         }
     },
     "extra": {
