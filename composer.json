@@ -56,7 +56,8 @@
             "AlexisVS\\MultipassTestingModule\\Http\\": "src/Http/",
             "AlexisVS\\MultipassTestingModule\\Http\\Controllers\\": "src/Http/Controllers/",
             "AlexisVS\\MultipassTestingModule\\Database\\Factories\\": "database/factories/",
-            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/"
+            "AlexisVS\\MultipassTestingModule\\Database\\Migrations\\": "database/migrations/",
+            "AlexisVS\\MultipassTestingModule\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
