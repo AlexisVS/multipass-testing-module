@@ -4,7 +4,7 @@
         "postinstall": "npm run build"
     },
     "dependencies": {
-        "vite": "^4.4.10"
+        "vite": "^4.4.11"
     },
     "devDependencies": {
         "typescript": "^5.2.2"
